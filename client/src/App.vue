@@ -1,15 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <page-header></page-header>
+
+    <stateList></stateList>
+
+    <PageFooter></PageFooter>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PageHeader from '@/components/PageHeader.vue'
+import PageFooter from '@/components/PageFooter.vue'
+import StateList from '@/components/StateList.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PageHeader,
+    PageFooter,
+    StateList
+  },
+  mounted() {
+    this.$stateService.getAllStates().then( states => console.log(states))
   }
 }
 </script>
