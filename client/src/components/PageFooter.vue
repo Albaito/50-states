@@ -1,8 +1,16 @@
 <template>
-    <div>
-        <p>todo - links to defferent parts of the site</p>
+    <div class="footer">
+        <div class="m-2">
+            <span class="p-3">
+                <router-link to="/">Home</router-link>
+            </span>
 
-        <p>Header image by
+            <span class="p-3">
+                <router-link to="about">About this site</router-link>
+            </span>
+        </div>
+
+        <p class="text-right p-2">Header image by
             <a href="https://unsplash.com/photos/KpBXAOs80YI">@CHRISLAWTON</a>
         </p>
     </div>
