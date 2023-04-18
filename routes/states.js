@@ -10,20 +10,22 @@ router.get('/states', function(req, res, next) {
     .catch( err => next(err) )
 })
 
-router.patch('/state/:name', function(req, res, next) {
-    let stateName = req.params.name
-    let stateVisited = req.body.visited
+// patch (update) route
 
-    States.update({ visited: stateVisited }, { where: { name: stateName }})
-    .then( rowsUpdated => {
-        if (rowsUpdated) {
-            return res.send('ok')
-        }
-        else {
-            return res.status(404).send('State not found')
-        }
+    router.patch('/states/:name', function(req, res, next) {
+        let stateName = req.params.name
+        let stateVisited = req.body.visited
+
+        States.update( { visited: stateVisited }, { where: {name: stateName} } )
+            .then( rowsUpdated => {
+                let numberOfRowsUpdated = rowsUpdated[0]
+                if (numberOfRowsUpdated == 1) {
+                    return res.send('ok')
+                }
+                return res.status(404).send('State not found')
+            } )
+            .catch( err => next(err) )
+
     })
-    .catch( err => next(err) )
-})
 
 module.exports = router
