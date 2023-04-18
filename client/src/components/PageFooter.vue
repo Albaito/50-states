@@ -10,9 +10,19 @@
             </span>
         </div>
 
-        <p class="text-right p-2">Header image by
-            <a href="https://unsplash.com/photos/KpBXAOs80YI">@CHRISLAWTON</a>
-        </p>
+        <div class="credits">
+
+            <P>Map Icon by
+                <a href="https://icons8.com/icon/43632/map">Icons8</a>
+            </P>    
+        
+            <p class="text-right p-2">Header image by
+                <a href="https://unsplash.com/photos/KpBXAOs80YI">@CHRISLAWTON</a>
+            </p>
+
+        </div>
+
+        
     </div>
 </template>
 
