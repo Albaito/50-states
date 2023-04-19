@@ -27,7 +27,6 @@ router.get('/state/:name', function(req, res, name) {
 })
 
 // patch (update) route
-
     router.patch('/states/:name', function(req, res, next) {
         let stateName = req.params.name
         let stateVisited = req.body.visited

@@ -5,6 +5,8 @@
                 <router-link to="/">Home</router-link>
             </span>
 
+            <pre></pre>
+
             <span class="p-3">
                 <router-link to="about">About this site</router-link>
             </span>
