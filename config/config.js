@@ -1,4 +1,4 @@
-{
+module.exports = {
   "development": {
     "storage": "states.db",
     "dialect": "sqlite"
@@ -12,7 +12,7 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": process.env.DB_PASSWORD,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
