@@ -7,6 +7,13 @@ export default {
         })
     },
 
+    getAllVisitedStates() {
+        return axios.get('/api/visitedStates').then( response => {
+            console.log(response)
+            return response.data
+        })
+    },
+
     setVisited(stateName, visited) {
         // example URL api/states/Wisconsin
         let requestData = { visited: visited }

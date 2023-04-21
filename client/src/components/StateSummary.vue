@@ -15,22 +15,22 @@
             totalVisited() {
                 let visitedCount = 0
                 this.states.forEach( state => {
-                    if (state.visited) {
+                    if (state.visited == true) {
                         visitedCount++
                     }
                 })
                 return visitedCount
-            }
-        },
-        areAllVisited() {
+            },
+            areAllVisited() {
             return this.totalVisited === this.states.length
-        },
-        units() {
-            if (this.totalVisited === 1) {
-                return 'state'
-            }
-            else {
-                return 'states'
+            },
+            units() {
+                if (this.totalVisited === 1) {
+                    return 'state'
+                }
+                else {
+                    return 'states'
+                }
             }
         }
     }

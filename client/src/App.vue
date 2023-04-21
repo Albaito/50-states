@@ -4,7 +4,7 @@
 
     <router-view></router-view>
 
-    <PageFooter></PageFooter>
+    <page-footer></page-footer>
   </div>
 </template>
 

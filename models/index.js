@@ -11,6 +11,8 @@ const db = {};
 let password = process.env.DB_PASSWORD
 config.password = password
 
+console.log(config)
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);

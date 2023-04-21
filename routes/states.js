@@ -12,6 +12,15 @@ router.get('/states', function(req, res, next) {
     .catch( err => next(err) )
 })
 
+// fetchs all visited states
+router.get('/visitedStates', function(req, res, next) {
+    States.findAll({ where: { visited: true} } ).then( states => {
+        return res.json(states)
+    })
+    .catch( err => next(err) )
+})
+
+// fetchs selected state
 router.get('/state/:name', function(req, res, name) {
     let stateName = req.params.name
     States.findOne( {where: { name: stateName } } )
@@ -25,6 +34,8 @@ router.get('/state/:name', function(req, res, name) {
     })
     .catch( err => next(err) )
 })
+
+
 
 // patch (update) route
     router.patch('/states/:name', function(req, res, next) {
